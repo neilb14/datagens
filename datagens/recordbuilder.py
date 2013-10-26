@@ -1,3 +1,10 @@
 class RecordBuilder:
+	def __init__(self):
+		self.fields = []
+
+	def add_field(self, name):
+		self.fields.append(name)
+
 	def start(self, record):
-		record['feature'] = 'Moose'
+		for field in self.fields:
+			record[field] = 'Moose'
