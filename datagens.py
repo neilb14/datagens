@@ -18,7 +18,6 @@ for n in range(int(limit)):
 for row in results:
 	str = ","
 	fields = []
-	keys = row.keys
-	for k in row.keys():	
+	for k in builder.fieldNames():	
 		fields.append(row[k])
 	print(str.join(fields))

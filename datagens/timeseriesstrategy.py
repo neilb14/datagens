@@ -10,4 +10,4 @@ class TimeSeriesStrategy:
 		duration = random.randint(1,60*60)
 		result = self.last_value + timedelta(seconds=duration)
 		self.last_value = result
-		return str(result)
+		return result

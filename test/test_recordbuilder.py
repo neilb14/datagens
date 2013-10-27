@@ -21,6 +21,15 @@ class RecordBuilderTest(unittest.TestCase):
 		self.assertEqual(self.results['name'], 'Monkey')
 		strategy.build.assert_called_with(self.results)
 
+	def test_builderReturnsFieldNamesInTheOrderTheyWereDefined(self):
+		self.builder.add_field('color', Mock())
+		self.builder.add_field('sound', Mock())
+		self.builder.add_field('smell', Mock())
+		fields = self.builder.fieldNames()
+		self.assertEqual(0, fields.index('color'))
+		self.assertEqual(1, fields.index('sound'))
+		self.assertEqual(2, fields.index('smell'))
+
 
 if __name__ == "__main__":
     unittest.main()
