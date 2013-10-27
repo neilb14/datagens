@@ -15,9 +15,11 @@ for n in range(int(limit)):
 	builder.start(record)
 	results.append(record)
 
+str = ","
+fieldNames = builder.fieldNames()
+print(str.join(fieldNames))
 for row in results:
-	str = ","
 	fields = []
-	for k in builder.fieldNames():	
+	for k in fieldNames:	
 		fields.append(row[k])
 	print(str.join(fields))
