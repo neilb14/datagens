@@ -1,1 +1,1 @@
-__all__ = ["recordbuilder", "setstrategy", "timeseriesstrategy"]
+__all__ = ["recordbuilder", "setstrategy", "timeseriesstrategy", "simplestringformatter"]
