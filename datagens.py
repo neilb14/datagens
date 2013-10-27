@@ -1,6 +1,6 @@
 import sys
 from datetime import datetime
-from datagens import recordbuilder, setstrategy, timeseriesstrategy
+from datagens import recordbuilder, setstrategy, timeseriesstrategy, customdateformatter
 
 limit = sys.argv[2]
 builder = recordbuilder.RecordBuilder()
