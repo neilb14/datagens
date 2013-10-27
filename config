@@ -1,0 +1,3 @@
+builder.add_field('feature', setstrategy.SetStrategy(['moose','rhino','cheetah']))
+builder.add_field('type', setstrategy.SetStrategy(['tick']))
+builder.add_field('at',timeseriesstrategy.TimeSeriesStrategy(datetime(2013,10,26,12,0,0,0)))

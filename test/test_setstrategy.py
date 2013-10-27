@@ -12,18 +12,12 @@ class SetStrategyTest(unittest.TestCase):
 		result = self.strategy.build({})
 		self.assertEqual("red", result)
 
-	def test_setWithTwoItems(self):
-		self.strategy = s.SetStrategy(["red", "blue"])
+	def test_setWithMultipleItems(self):
+		fields = ["red","blue","green","yellow"]
+		self.strategy = s.SetStrategy(fields)
 		results = [self.strategy.build({}),self.strategy.build({})]
-		self.assertEqual("red", results[0])
-		self.assertEqual("blue", results[1])
-
-	def test_rollBackToStartOfSet(self):
-		self.strategy = s.SetStrategy(["red", "blue"])
-		results = [self.strategy.build({}), self.strategy.build({}), self.strategy.build({})]
-		self.assertEqual("red", results[0])
-		self.assertEqual("blue", results[1])
-		self.assertEqual("red", results[2])
+		self.assertTrue(fields.index(results[0])>=0)
+		self.assertTrue(fields.index(results[1])>=0)
 
 if __name__ == "__main__":
     unittest.main()
